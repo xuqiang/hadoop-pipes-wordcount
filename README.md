@@ -16,11 +16,10 @@ export LIB=-lcrypto
          sep = "|";  
 
 3. 重新安装hadoop utils和pipes
-安装c++/utils,到$(HADOOP_HOME)/src/c++/utils运行如下命令:./configure && make install
-安装c++/pipes,到$(HADOOP_HOME)/src/c++/pipes运行如下命令: ./configure && make install
-安装pipe时可能出现error: ‘sleep’ was not declared in this scope错误，参考这个patch
-error: ‘sleep’ was not declared in this scope
-重新编译即可 
+    
+    安装c++/utils,到$(HADOOP_HOME)/src/c++/utils运行如下命令:./configure && make install
+    安装c++/pipes,到$(HADOOP_HOME)/src/c++/pipes运行如下命令: ./configure && make install
+    安装pipe时可能出现error: ‘sleep’ was not declared in this scope错误，参考这个patch error: ‘sleep’ was not declared in this scope 重新编译即可 
 
 4. 将$(HADOOP_HOME)/src/c++/install下的东西替换到$HADOOP_HOME/c++即可
 
