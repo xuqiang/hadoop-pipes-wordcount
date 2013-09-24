@@ -4,15 +4,16 @@
 export LIB=-lcrypto
 
 2. 检查HADOOP_HOME/src/contrib/gridmix/src/java/org/apache/hadoop/mapred/gridmix/Gridmix.java
--  private <T> String getEnumValues(Enum<? extends T>[] e) {  
-+  private String getEnumValues(Enum<?>[] e) {  
-     StringBuilder sb = new StringBuilder();  
-     String sep = "";  
--    for (Enum<? extends T> v : e) {  
-+    for (Enum<?> v : e) {  
-       sb.append(sep);  
-       sb.append(v.name());  
-       sep = "|";  
+    
+    -  private <T> String getEnumValues(Enum<? extends T>[] e) {  
+    +  private String getEnumValues(Enum<?>[] e) {  
+         StringBuilder sb = new StringBuilder();  
+        String sep = "";  
+    -    for (Enum<? extends T> v : e) {  
+    +    for (Enum<?> v : e) {  
+           sb.append(sep);  
+        sb.append(v.name());  
+         sep = "|";  
 
 3. 重新安装hadoop utils和pipes
 安装c++/utils,到$(HADOOP_HOME)/src/c++/utils运行如下命令:./configure && make install
